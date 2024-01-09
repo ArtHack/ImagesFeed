@@ -40,23 +40,23 @@ final class ImagesListCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupViews()
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupViews() {
-        addSubview(cellImage)
-        addSubview(likeButton)
-        addSubview(dateLabel)
+    private func setupUI() {
+        contentView.addSubview(cellImage)
+        contentView.addSubview(likeButton)
+        contentView.addSubview(dateLabel)
         
         NSLayoutConstraint.activate([
-            cellImage.topAnchor.constraint(equalTo: topAnchor),
-            cellImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            cellImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            cellImage.bottomAnchor.constraint(equalTo: bottomAnchor),
+            cellImage.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
+            cellImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            cellImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            cellImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
             likeButton.topAnchor.constraint(equalTo: topAnchor),
             likeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),

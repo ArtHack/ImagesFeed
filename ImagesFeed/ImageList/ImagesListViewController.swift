@@ -11,15 +11,33 @@ class ImagesListViewController: UIViewController {
     
     private let photosName: [String] = Array(0..<20).map{ "\($0)" }
     
-    let tableView = UITableView()
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .systemBackground
+        tableView.allowsSelection = true
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(ImagesListCell.self, forCellReuseIdentifier: ImagesListCell.reusedIdentifier)
+        tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
+//        tableView.dataSource = self
+//        tableView.delegate = self
+        return tableView
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addSubviews()
         setupConstraints()
-        setupTableView()
-        tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
+        
+//        tableView.translatesAutoresizingMaskIntoConstraints = false
+//        tableView.backgroundColor = .black
+//        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+//        tableView.register(ImagesListCell.self, forCellReuseIdentifier: ImagesListCell.reusedIdentifier)
+//        tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
     }
     
     private func addSubviews() {
@@ -32,18 +50,9 @@ class ImagesListViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
 
         ])
-    }
-    
-    private func setupTableView() {
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .black
-
-        tableView.delegate = self
-        tableView.dataSource = self
-
-        tableView.register(ImagesListCell.self, forCellReuseIdentifier: ImagesListCell.reusedIdentifier)
     }
 
     private lazy var dateFormatter: DateFormatter = {
@@ -60,6 +69,7 @@ extension ImagesListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCell(withIdentifier: ImagesListCell.reusedIdentifier, for: indexPath)
 
         guard let imageListCell = cell as? ImagesListCell else {

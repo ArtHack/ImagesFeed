@@ -18,8 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         
-        let viewController = ImagesListViewController()
-        window?.rootViewController = viewController
+//        let viewController = ImagesListViewController()
+        let vc = ProfileViewController()
+        window?.rootViewController = vc
         window?.makeKeyAndVisible()
     }
 

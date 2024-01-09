@@ -12,6 +12,8 @@
 		CA6F5D492B3C9BA90060F353 /* ImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F5D482B3C9BA90060F353 /* ImagesListViewController.swift */; };
 		CA6F5D4E2B3C9BAB0060F353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA6F5D4D2B3C9BAB0060F353 /* Assets.xcassets */; };
 		CA6F5D512B3C9BAB0060F353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA6F5D4F2B3C9BAB0060F353 /* LaunchScreen.storyboard */; };
+		CA7EE3322B4BE59700EB2180 /* Extension+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7EE3312B4BE59600EB2180 /* Extension+UITableView.swift */; };
+		CA803DDD2B4C2CF20082EB00 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA803DDC2B4C2CF20082EB00 /* ProfileViewController.swift */; };
 		CAB8CADE2B472CD100217AC5 /* ImagesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB8CADD2B472CD100217AC5 /* ImagesListCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,8 @@
 		CA6F5D4D2B3C9BAB0060F353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA6F5D502B3C9BAB0060F353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA6F5D522B3C9BAB0060F353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA7EE3312B4BE59600EB2180 /* Extension+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITableView.swift"; sourceTree = "<group>"; };
+		CA803DDC2B4C2CF20082EB00 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CAB8CADD2B472CD100217AC5 /* ImagesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,19 +60,45 @@
 		CA6F5D432B3C9BA90060F353 /* ImagesFeed */ = {
 			isa = PBXGroup;
 			children = (
+				CA803DDB2B4C2CB10082EB00 /* Profile */,
 				CAB8CADF2B472DB600217AC5 /* ImageList */,
+				CA6F5D522B3C9BAB0060F353 /* Info.plist */,
+				CA803DDE2B4C2D440082EB00 /* Supporting */,
+			);
+			path = ImagesFeed;
+			sourceTree = "<group>";
+		};
+		CA7EE3302B4BE56800EB2180 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CA7EE3312B4BE59600EB2180 /* Extension+UITableView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CA803DDB2B4C2CB10082EB00 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CA803DDC2B4C2CF20082EB00 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CA803DDE2B4C2D440082EB00 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
 				CA6F5D442B3C9BA90060F353 /* AppDelegate.swift */,
 				CA6F5D462B3C9BA90060F353 /* SceneDelegate.swift */,
 				CA6F5D4D2B3C9BAB0060F353 /* Assets.xcassets */,
 				CA6F5D4F2B3C9BAB0060F353 /* LaunchScreen.storyboard */,
-				CA6F5D522B3C9BAB0060F353 /* Info.plist */,
 			);
-			path = ImagesFeed;
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 		CAB8CADF2B472DB600217AC5 /* ImageList */ = {
 			isa = PBXGroup;
 			children = (
+				CA7EE3302B4BE56800EB2180 /* Helpers */,
 				CAB8CADD2B472CD100217AC5 /* ImagesListCell.swift */,
 				CA6F5D482B3C9BA90060F353 /* ImagesListViewController.swift */,
 			);
@@ -145,7 +175,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA803DDD2B4C2CF20082EB00 /* ProfileViewController.swift in Sources */,
 				CA6F5D492B3C9BA90060F353 /* ImagesListViewController.swift in Sources */,
+				CA7EE3322B4BE59700EB2180 /* Extension+UITableView.swift in Sources */,
 				CAB8CADE2B472CD100217AC5 /* ImagesListCell.swift in Sources */,
 				CA6F5D452B3C9BA90060F353 /* AppDelegate.swift in Sources */,
 				CA6F5D472B3C9BA90060F353 /* SceneDelegate.swift in Sources */,
